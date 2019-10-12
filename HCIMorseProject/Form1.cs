@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
-using Timer = System.Windows.Forms.Timer;
 using System.Diagnostics;
 using System.IO;
 
