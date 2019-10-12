@@ -117,6 +117,7 @@ namespace HCIMorseProject
                         
                         string line = s.ReadLine();
                         string[] tokens = line.Split(' ');
+                        if (tokens[0] == "UPDATE") return;//dont process updates
                         textBox1.Text = tokens[1];
                         checkBox1.Checked = tokens[0] == "ON";
                         
@@ -143,6 +144,10 @@ namespace HCIMorseProject
                                 high = high / 3;
                                 labelHigh.Text = high.ToString();
                                 labelLow.Text = low.ToString();
+                                //send low and high value to arduino to use
+                                sp.WriteLine("SH:"+high);
+                                sp.WriteLine("SL:" + low);
+
                             }
 
 

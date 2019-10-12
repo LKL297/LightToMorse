@@ -52,7 +52,24 @@ void loop() {
         printAllow = true;
       }
   }
-  
+
+  //check for setting of high and low values
+  if(Serial.available() >0){
+    String type = Serial.readStringUntil(':');
+    Serial.read();//:
+    String value = Serial.readStringUntil('\0');
+    int lightVal = value.toInt();
+
+    if(type =="SH"){
+      highAmount = lightVal;
+      Serial.print("UPDATE High set to ");
+      Serial.println(highAmount);
+    }else{
+      lowAmount = lightVal;
+      Serial.print("UPDATE Low set to ");
+      Serial.println(lowAmount);
+    }
+  }
   
   
   
