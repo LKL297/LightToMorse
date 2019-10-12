@@ -9,8 +9,8 @@ void setup() {
 }
 
 int thresholdAmount = 5;
-int highAmount = 200;
-int lowAmount = 20;
+int highAmount = 0;
+int lowAmount = 0;
 int prev = 0;
 bool printAllow = true;
 bool previousPrint = false;
@@ -19,6 +19,10 @@ void loop() {
   // put your main code here, to run repeatedly:
   
   int lightIN = analogRead(A0);
+  if(lowAmount ==0){
+    lowAmount = lightIN;
+    highAmount = lowAmount+70;
+  }
 
   if(printAllow){
     //Serial.println(lightIN);
