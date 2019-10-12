@@ -1,0 +1,10 @@
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\bin\Debug\HCIMorseProject.exe.config
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\bin\Debug\HCIMorseProject.exe
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\bin\Debug\HCIMorseProject.pdb
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.csprojAssemblyReference.cache
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.Form1.resources
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.Properties.Resources.resources
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.csproj.GenerateResource.cache
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.csproj.CoreCompileInputs.cache
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.exe
+C:\Users\lachl\source\repos\HCIMorseProject\HCIMorseProject\obj\Debug\HCIMorseProject.pdb
