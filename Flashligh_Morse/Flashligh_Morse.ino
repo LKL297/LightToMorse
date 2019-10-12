@@ -21,7 +21,7 @@ void loop() {
   int lightIN = analogRead(A0);
   if(lowAmount ==0){
     lowAmount = lightIN;
-    highAmount = lowAmount+70;
+    highAmount = lowAmount+20;
   }
 
   if(printAllow){

@@ -329,7 +329,11 @@ namespace HCIMorseProject
         private void Button2_Click(object sender, EventArgs e)
         {
             string time = textBoxTimeSet.Text;
-            dotMilliSeconds = long.Parse(time);
+            if(textBoxTimeSet.Text ==null || textBoxTimeSet.Text == "")
+            {
+                textBoxTimeSet.BackColor = Color.OrangeRed;
+            }
+            else dotMilliSeconds = long.Parse(time);
         }
 
         private void DataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -359,6 +363,8 @@ namespace HCIMorseProject
             tempMorse = "";
             labelDetectedWord.Text = "";
             labelDetectedMorse.Text = "";
+            if(t.IsAlive)t.Abort();
+            labelTriggerTime.Text = "0";
         }
 
         private void ButtonWordMake_Click(object sender, EventArgs e)
@@ -366,11 +372,16 @@ namespace HCIMorseProject
             string[] tokens = tempMorse.Split(' ');
             for(int i = 0; i < tokens.Length; i++)
             {
-                finalWord += morseMap[tokens[i]];
+                if(morseMap.ContainsKey(tokens[i]))finalWord += morseMap[tokens[i]];
             }
             labelDetectedWord.Text = finalWord;
             t.Abort();
             labelTriggerTime.Text = "0";
+        }
+
+        private void TextBoxTimeSet_TextChanged(object sender, EventArgs e)
+        {
+            textBoxTimeSet.BackColor = Color.White;
         }
     }
 }

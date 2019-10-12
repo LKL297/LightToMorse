@@ -205,6 +205,7 @@
             this.textBoxTimeSet.Name = "textBoxTimeSet";
             this.textBoxTimeSet.Size = new System.Drawing.Size(133, 34);
             this.textBoxTimeSet.TabIndex = 16;
+            this.textBoxTimeSet.TextChanged += new System.EventHandler(this.TextBoxTimeSet_TextChanged);
             // 
             // button2
             // 
