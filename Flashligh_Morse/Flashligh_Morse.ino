@@ -1,3 +1,6 @@
+#include <LiquidCrystal.h>
+
+LiquidCrystal lcd(12,11,5,4,3,2);
 int LEDPIN = 4;
 int BTNPIN = 5;
 
@@ -6,6 +9,7 @@ void setup() {
   pinMode(LEDPIN,OUTPUT);
   pinMode(BTNPIN,INPUT_PULLUP);
   Serial.begin(9600);
+  lcd.begin(16,2);
 }
 
 int thresholdAmount = 5;
@@ -19,9 +23,13 @@ void loop() {
   // put your main code here, to run repeatedly:
   
   int lightIN = analogRead(A0);
+  lcd.home();
+  lcd.clear();
+  //lcd.println("Current Light:");
+  lcd.print(lightIN);
   if(lowAmount ==0){
     lowAmount = lightIN;
-    highAmount = lowAmount+20;
+    highAmount = lowAmount+30;
   }
 
   if(printAllow){
@@ -68,10 +76,14 @@ void loop() {
       highAmount = lightVal;
       Serial.print("UPDATE High set to ");
       Serial.println(highAmount);
+      lcd.print("UPDATE High:");
+      lcd.println(highAmount);
     }else{
       lowAmount = lightVal;
       Serial.print("UPDATE Low set to ");
       Serial.println(lowAmount);
+      lcd.print("UPDATE Low:");
+      lcd.println(lowAmount);
     }
   }
   

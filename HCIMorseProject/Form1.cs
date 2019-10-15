@@ -20,7 +20,7 @@ namespace HCIMorseProject
     {
         SerialPort sp;
 
-        const int LeWayMilli = 100;
+        const int LeWayMilli = 150;
 
 
         //set light values
@@ -146,13 +146,13 @@ namespace HCIMorseProject
                                 labelLow.Text = low.ToString();
                                 //send low and high value to arduino to use
                                 sp.WriteLine("SH:"+high);
-                                sp.WriteLine("SL:" + low);
+                                sp.WriteLine("SL:" + (low-20));
 
                             }
 
 
                         }//selectedsetting if
-                        else if (dotSet ||dashSet)
+                        else if (dotSet || dashSet)
                         {
                             if (checkBox1.Checked)
                             {
@@ -166,6 +166,7 @@ namespace HCIMorseProject
                                 else labelDashTime.Text = stw.ElapsedMilliseconds.ToString() + " MilliSeconds";
                                 stw.Stop();
                                 dotSet = false;
+                                dashSet = false;
                             }
                         }
                         else
@@ -179,6 +180,7 @@ namespace HCIMorseProject
                             {
                                 bool dot = DetectDot(previousTime);
                                 bool dash = DetectDash(previousTime);
+                                
                                 if (dash)
                                 {
                                     //is a space
@@ -264,6 +266,14 @@ namespace HCIMorseProject
             }
             else return false;
         }
+        private bool DetectWordEnd(long prev)
+        {
+            if (dotMilliSeconds * 7 - prev > LeWayMilli - 2 * LeWayMilli)
+            {
+                return true;
+            }
+            else return false;
+        }
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -295,9 +305,12 @@ namespace HCIMorseProject
             isClosed = true;
             if (sp.IsOpen)
             {
+                sp.WriteLine("SH:0" );
+                sp.WriteLine("SL:0" );
                 sp.Close();
             }
             if (t != null && t.IsAlive) t.Abort();
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -369,14 +382,16 @@ namespace HCIMorseProject
 
         private void ButtonWordMake_Click(object sender, EventArgs e)
         {
+            MakeWord();
+        }
+        private void MakeWord()
+        {
             string[] tokens = tempMorse.Split(' ');
-            for(int i = 0; i < tokens.Length; i++)
+            for (int i = 0; i < tokens.Length; i++)
             {
-                if(morseMap.ContainsKey(tokens[i]))finalWord += morseMap[tokens[i]];
+                if (morseMap.ContainsKey(tokens[i])) finalWord += morseMap[tokens[i]];
             }
             labelDetectedWord.Text = finalWord;
-            t.Abort();
-            labelTriggerTime.Text = "0";
         }
 
         private void TextBoxTimeSet_TextChanged(object sender, EventArgs e)

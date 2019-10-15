@@ -135,7 +135,7 @@
             this.dataView.Name = "dataView";
             this.dataView.RowHeadersWidth = 51;
             this.dataView.RowTemplate.Height = 24;
-            this.dataView.Size = new System.Drawing.Size(260, 426);
+            this.dataView.Size = new System.Drawing.Size(260, 379);
             this.dataView.TabIndex = 9;
             this.dataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataView_CellContentClick);
             // 
@@ -161,13 +161,12 @@
             // labelDetectedWord
             // 
             this.labelDetectedWord.AutoSize = true;
-            this.labelDetectedWord.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelDetectedWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetectedWord.Location = new System.Drawing.Point(278, 394);
+            this.labelDetectedWord.BackColor = System.Drawing.SystemColors.Control;
+            this.labelDetectedWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetectedWord.Location = new System.Drawing.Point(278, 347);
             this.labelDetectedWord.Name = "labelDetectedWord";
-            this.labelDetectedWord.Size = new System.Drawing.Size(306, 44);
+            this.labelDetectedWord.Size = new System.Drawing.Size(0, 36);
             this.labelDetectedWord.TabIndex = 12;
-            this.labelDetectedWord.Text = "_____________";
             // 
             // labelDetectedLetter
             // 
@@ -230,17 +229,16 @@
             // labelDetectedMorse
             // 
             this.labelDetectedMorse.AutoSize = true;
-            this.labelDetectedMorse.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelDetectedMorse.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDetectedMorse.Location = new System.Drawing.Point(278, 347);
+            this.labelDetectedMorse.BackColor = System.Drawing.SystemColors.Control;
+            this.labelDetectedMorse.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDetectedMorse.Location = new System.Drawing.Point(12, 397);
             this.labelDetectedMorse.Name = "labelDetectedMorse";
-            this.labelDetectedMorse.Size = new System.Drawing.Size(306, 44);
+            this.labelDetectedMorse.Size = new System.Drawing.Size(0, 36);
             this.labelDetectedMorse.TabIndex = 19;
-            this.labelDetectedMorse.Text = "_____________";
             // 
             // buttonWordMake
             // 
-            this.buttonWordMake.Location = new System.Drawing.Point(602, 404);
+            this.buttonWordMake.Location = new System.Drawing.Point(590, 347);
             this.buttonWordMake.Name = "buttonWordMake";
             this.buttonWordMake.Size = new System.Drawing.Size(168, 34);
             this.buttonWordMake.TabIndex = 20;
